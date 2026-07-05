@@ -489,7 +489,7 @@ function App() {
   ]
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col items-center p-3 sm:p-4 md:p-8 pb-2 sm:pb-4 bg-[#fafcfb] overflow-x-hidden select-none font-sans">
+    <div className="relative w-full min-h-screen flex flex-col items-center p-3 sm:p-4 md:p-8 pb-2 sm:pb-4 bg-[#fafcfb] overflow-x-hidden overflow-y-clip select-none font-sans">
       
       {/* --- Camera Flash Overlay --- */}
       {isFlashing && (
