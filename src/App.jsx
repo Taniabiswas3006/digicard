@@ -11,6 +11,7 @@ const defaultPhrases = [
 
 function App() {
   const phrasesApiUrl = import.meta.env.VITE_API_URL || '/api/phrases'
+  const galleryApiUrl = import.meta.env.VITE_GALLERY_API_URL || '/api/gallery'
   const [selectedPhoto, setSelectedPhoto] = useState(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [heartsCount, setHeartsCount] = useState(120)
@@ -30,40 +31,94 @@ function App() {
   const [typedBg, setTypedBg] = useState('bg-[#FFFDE8]') // butter cream, light lavender, light mint
   const [typedColor, setTypedColor] = useState('text-[#5B0E1B]')
 
-  // Gallery States (persisted in localStorage, fallback to pre-loaded memories)
-  const [galleryItems, setGalleryItems] = useState(() => {
-    const saved = localStorage.getItem('bestie_gallery')
-    if (saved) {
+  // Gallery States (shared across devices via a small backend)
+  const [galleryItems, setGalleryItems] = useState([])
+  const [isGalleryLoaded, setIsGalleryLoaded] = useState(false)
+
+  useEffect(() => {
+    let ignore = false
+
+    const loadGalleryItems = async () => {
       try {
-        return JSON.parse(saved)
-      } catch (e) {
-        console.error("Failed to parse gallery items from localStorage", e)
+        const response = await fetch(galleryApiUrl)
+        if (!response.ok) {
+          throw new Error(`Failed to load gallery items (${response.status})`)
+        }
+
+        const data = await response.json()
+        if (!ignore && Array.isArray(data)) {
+          setGalleryItems(data)
+          localStorage.setItem('bestie_gallery', JSON.stringify(data))
+        }
+      } catch (error) {
+        console.error('Failed to load shared gallery items, falling back to localStorage', error)
+        if (!ignore) {
+          const saved = localStorage.getItem('bestie_gallery')
+          if (saved) {
+            try {
+              const parsed = JSON.parse(saved)
+              if (Array.isArray(parsed)) {
+                setGalleryItems(parsed)
+              }
+            } catch (parseError) {
+              console.error('Failed to parse gallery items from localStorage', parseError)
+            }
+          } else {
+            setGalleryItems([
+              {
+                id: 'pre-1',
+                type: 'text',
+                content: 'Tania loves you guys! Have a safe flight back home! ✈️💖',
+                font: 'font-cursive',
+                bg: 'bg-[#eee9ff]',
+                color: 'text-black',
+                date: 'July 5, 2026'
+              },
+              {
+                id: 'pre-2',
+                type: 'drawing',
+                image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"><path d="M50 50 C50 20, 80 20, 100 45 C120 20, 150 20, 150 50 C150 80, 100 110, 100 110 C100 110, 50 80, 50 50 Z" fill="%23ffd6e0" stroke="%23333" stroke-width="3"/></svg>',
+                date: 'July 5, 2026',
+                caption: 'Besties Forever! 🎀'
+              }
+            ])
+          }
+        }
+      } finally {
+        if (!ignore) {
+          setIsGalleryLoaded(true)
+        }
       }
     }
-    return [
-      {
-        id: 'pre-1',
-        type: 'text',
-        content: 'Tania loves you guys! Have a safe flight back home! ✈️💖',
-        font: 'font-cursive',
-        bg: 'bg-[#eee9ff]', // lavender
-        color: 'text-black',
-        date: 'July 5, 2026'
-      },
-      {
-        id: 'pre-2',
-        type: 'drawing',
-        image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"><path d="M50 50 C50 20, 80 20, 100 45 C120 20, 150 20, 150 50 C150 80, 100 110, 100 110 C100 110, 50 80, 50 50 Z" fill="%23ffd6e0" stroke="%23333" stroke-width="3"/></svg>',
-        date: 'July 5, 2026',
-        caption: 'Besties Forever! 🎀'
-      }
-    ]
-  })
 
-  // Synchronize gallery items changes to localStorage
+    loadGalleryItems()
+
+    return () => {
+      ignore = true
+    }
+  }, [])
+
   useEffect(() => {
-    localStorage.setItem('bestie_gallery', JSON.stringify(galleryItems))
-  }, [galleryItems])
+    if (!isGalleryLoaded) {
+      return
+    }
+
+    const syncGalleryItems = async () => {
+      try {
+        await fetch(galleryApiUrl, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ galleryItems })
+        })
+        localStorage.setItem('bestie_gallery', JSON.stringify(galleryItems))
+      } catch (error) {
+        console.error('Failed to sync gallery items to shared storage', error)
+        localStorage.setItem('bestie_gallery', JSON.stringify(galleryItems))
+      }
+    }
+
+    syncGalleryItems()
+  }, [galleryItems, isGalleryLoaded])
 
   // Custom Dictionary States (shared across devices via a small backend)
   const [phrases, setPhrases] = useState(defaultPhrases)
