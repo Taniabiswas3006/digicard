@@ -1,6 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
 
+const defaultPhrases = [
+  { id: '1', bengali: 'KAMON ACHO?', english: 'HOW ARE YOU?', emoji: '🌸', note: 'THE SWEETEST WAY TO GREET YOUR FAVORITE BESTIES' },
+  { id: '2', bengali: 'ASCHI', english: 'I LEAVE ONLY TO RETURN', emoji: '🚶‍♀️', note: 'LITERALLY "I AM COMING"—THE BEAUTIFUL BENGALI WAY OF SAYING GOODBYE' },
+  { id: '3', bengali: 'DHONNOBAD', english: 'THANK YOU', emoji: '🙏', note: 'FOR ALL THE ENDLESS LAUGHTER, COFFEE DATES, AND SWEET MEETS' },
+  { id: '4', bengali: 'PRONAM', english: 'RESPECTFUL GREETING', emoji: '🙇‍♀️', note: 'A TRADITIONAL GESTURE TO SHOW DEEP RESPECT AND LOVE' },
+  { id: '5', bengali: 'ABAR DEKHA HOBE', english: 'UNTIL WE MEET AGAIN', emoji: '🤝', note: 'THE HEARTFELT SEE-OFF SENTIMENT SAID WITH WARM HUGS' },
+  { id: '6', bengali: 'TOMAKE KHUB MISS KORBO', english: 'I WILL MISS YOU SO MUCH', emoji: '🥺', note: 'OUR SACRED CROSS-CONTINENTAL FRIENDSHIP PROMISE' }
+]
+
 function App() {
+  const phrasesApiUrl = import.meta.env.VITE_API_URL || '/api/phrases'
   const [selectedPhoto, setSelectedPhoto] = useState(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [heartsCount, setHeartsCount] = useState(120)
@@ -55,30 +65,75 @@ function App() {
     localStorage.setItem('bestie_gallery', JSON.stringify(galleryItems))
   }, [galleryItems])
 
-  // Custom Dictionary States (persisted in localStorage)
-  const [phrases, setPhrases] = useState(() => {
-    const saved = localStorage.getItem('bestie_phrases')
-    if (saved) {
+  // Custom Dictionary States (shared across devices via a small backend)
+  const [phrases, setPhrases] = useState(defaultPhrases)
+  const [isPhrasesLoaded, setIsPhrasesLoaded] = useState(false)
+
+  useEffect(() => {
+    let ignore = false
+
+    const loadPhrases = async () => {
       try {
-        return JSON.parse(saved)
-      } catch (e) {
-        console.error("Failed to parse phrases from localStorage", e)
+        const response = await fetch(phrasesApiUrl)
+        if (!response.ok) {
+          throw new Error(`Failed to load phrases (${response.status})`)
+        }
+
+        const data = await response.json()
+        if (!ignore && Array.isArray(data)) {
+          setPhrases(data)
+          localStorage.setItem('bestie_phrases', JSON.stringify(data))
+        }
+      } catch (error) {
+        console.error('Failed to load shared phrases, falling back to localStorage', error)
+        if (!ignore) {
+          const saved = localStorage.getItem('bestie_phrases')
+          if (saved) {
+            try {
+              const parsed = JSON.parse(saved)
+              if (Array.isArray(parsed)) {
+                setPhrases(parsed)
+              }
+            } catch (parseError) {
+              console.error('Failed to parse phrases from localStorage', parseError)
+            }
+          }
+        }
+      } finally {
+        if (!ignore) {
+          setIsPhrasesLoaded(true)
+        }
       }
     }
-    return [
-      { id: '1', bengali: 'KAMON ACHO?', english: 'HOW ARE YOU?', emoji: '🌸', note: 'THE SWEETEST WAY TO GREET YOUR FAVORITE BESTIES' },
-      { id: '2', bengali: 'ASCHI', english: 'I LEAVE ONLY TO RETURN', emoji: '🚶‍♀️', note: 'LITERALLY "I AM COMING"—THE BEAUTIFUL BENGALI WAY OF SAYING GOODBYE' },
-      { id: '3', bengali: 'DHONNOBAD', english: 'THANK YOU', emoji: '🙏', note: 'FOR ALL THE ENDLESS LAUGHTER, COFFEE DATES, AND SWEET MEETS' },
-      { id: '4', bengali: 'PRONAM', english: 'RESPECTFUL GREETING', emoji: '🙇‍♀️', note: 'A TRADITIONAL GESTURE TO SHOW DEEP RESPECT AND LOVE' },
-      { id: '5', bengali: 'ABAR DEKHA HOBE', english: 'UNTIL WE MEET AGAIN', emoji: '🤝', note: 'THE HEARTFELT SEE-OFF SENTIMENT SAID WITH WARM HUGS' },
-      { id: '6', bengali: 'TOMAKE KHUB MISS KORBO', english: 'I WILL MISS YOU SO MUCH', emoji: '🥺', note: 'OUR SACRED CROSS-CONTINENTAL FRIENDSHIP PROMISE' }
-    ]
-  })
 
-  // Synchronize phrases changes to localStorage
+    loadPhrases()
+
+    return () => {
+      ignore = true
+    }
+  }, [])
+
   useEffect(() => {
-    localStorage.setItem('bestie_phrases', JSON.stringify(phrases))
-  }, [phrases])
+    if (!isPhrasesLoaded) {
+      return
+    }
+
+    const syncPhrases = async () => {
+      try {
+        await fetch(phrasesApiUrl, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phrases })
+        })
+        localStorage.setItem('bestie_phrases', JSON.stringify(phrases))
+      } catch (error) {
+        console.error('Failed to sync phrases to shared storage', error)
+        localStorage.setItem('bestie_phrases', JSON.stringify(phrases))
+      }
+    }
+
+    syncPhrases()
+  }, [phrases, isPhrasesLoaded])
 
   // Live clock tracker for timezone card
   const [currentDate, setCurrentDate] = useState(new Date())
@@ -379,7 +434,7 @@ function App() {
   ]
 
   return (
-    <div className="relative w-full flex flex-col items-center p-3 sm:p-4 md:p-8 pb-2 sm:pb-4 bg-[#fafcfb] overflow-x-hidden select-none font-sans">
+    <div className="relative w-full min-h-screen flex flex-col items-center p-3 sm:p-4 md:p-8 pb-2 sm:pb-4 bg-[#fafcfb] overflow-x-hidden select-none font-sans">
       
       {/* --- Camera Flash Overlay --- */}
       {isFlashing && (
