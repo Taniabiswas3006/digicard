@@ -352,7 +352,7 @@ function App() {
       rotation: 'rotate-[-4deg] md:rotate-[-6deg]',
       shadow: 'shadow-[6px_6px_0px_0px_#E8DFFF]',
       note: "Kathryn, thank you for sharing your journey with me. From exploring local spots to exchanging life talks. Your spiritual stories and life lessons mesmerized me and make me more knowledgeable about Jishu. Have the safest flight back to the US! 💖 - Tania",
-      date: 'June 12, 2026'
+      date: 'June 20, 2026'
     },
     {
       id: 'CC1',
@@ -363,7 +363,7 @@ function App() {
       rotation: 'rotate-[4deg] md:rotate-[5deg]',
       shadow: 'shadow-[6px_6px_0px_0px_#F5F5DC]',
       note: "Natalee, thank you for being such a bright, sweet soul. Exchanging our cultural stories and learning about each other's worlds has been a beautiful gift. I absolutely adore all your gorgeous OOTDs—you always look so chic—and your mehendi looks absolutely stunning! Have the safest flight back to the US. I will miss you so much! 💖 - Tania",
-      date: 'May 28, 2026'
+      date: 'June 12, 2026'
     },
     {
       id: 'Ind Coffee House',
@@ -374,7 +374,7 @@ function App() {
       rotation: 'rotate-[-2deg] md:rotate-[-3deg]',
       shadow: 'shadow-[6px_6px_0px_0px_#E8DFFF]',
       note: "A sweet celebration for the best memories. Wishing both of you a beautiful, safe journey back home to the US. I'll miss you guys so much! ✨ - Tania",
-      date: 'April 4, 2026'
+      date: 'July 4, 2026'
     }
   ]
 
