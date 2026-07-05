@@ -77,7 +77,8 @@ export default function handler(req, res) {
     req.on('end', () => {
       try {
         const payload = JSON.parse(body)
-        const nextItems = Array.isArray(payload?.galleryItems) ? payload.galleryItems : []
+        const galleryPayload = payload?.gallery || payload?.galleryItems
+        const nextItems = Array.isArray(galleryPayload) ? galleryPayload : []
         res.status(200).json(writeGalleryItems(nextItems))
       } catch (error) {
         res.status(400).json({ error: 'Invalid gallery payload.' })

@@ -9,6 +9,21 @@ const defaultPhrases = [
   { id: '6', bengali: 'TOMAKE KHUB MISS KORBO', english: 'I WILL MISS YOU SO MUCH', emoji: '🥺', note: 'OUR SACRED CROSS-CONTINENTAL FRIENDSHIP PROMISE' }
 ]
 
+const defaultTapes = [
+  {
+    id: 'tape1',
+    name: 'MEMORIES TAPE 1 📽️',
+    url: '/video1.mp4'
+  },
+  {
+    id: 'tape2',
+    name: 'MEMORIES TAPE 2 📼',
+    url: '/video2.mp4'
+  }
+]
+
+
+
 function App() {
   const phrasesApiUrl = import.meta.env.VITE_API_URL || '/api/phrases'
   const galleryApiUrl = import.meta.env.VITE_GALLERY_API_URL || '/api/gallery'
@@ -31,8 +46,27 @@ function App() {
   const [typedBg, setTypedBg] = useState('bg-[#FFFDE8]') // butter cream, light lavender, light mint
   const [typedColor, setTypedColor] = useState('text-[#5B0E1B]')
 
+  // Video Player States
+  const [currentTapeIndex, setCurrentTapeIndex] = useState(0)
+  const videoSrc = defaultTapes[currentTapeIndex].url
+  const [isVideoMuted, setIsVideoMuted] = useState(true)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const videoRef = useRef(null)
+
+
   // Gallery States (shared across devices via a small backend)
-  const [galleryItems, setGalleryItems] = useState([])
+  const [galleryItems, setGalleryItems] = useState(() => {
+    const saved = localStorage.getItem('bestie_gallery')
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved)
+        if (Array.isArray(parsed)) return parsed
+      } catch (e) {
+        console.error('Failed to parse gallery items on mount:', e)
+      }
+    }
+    return []
+  })
   const [isGalleryLoaded, setIsGalleryLoaded] = useState(false)
 
   useEffect(() => {
@@ -105,11 +139,14 @@ function App() {
 
     const syncGalleryItems = async () => {
       try {
-        await fetch(galleryApiUrl, {
+        const response = await fetch(galleryApiUrl, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ galleryItems })
         })
+        if (!response.ok) {
+          throw new Error(`Server returned status ${response.status}`)
+        }
         localStorage.setItem('bestie_gallery', JSON.stringify(galleryItems))
       } catch (error) {
         console.error('Failed to sync gallery items to shared storage', error)
@@ -121,7 +158,18 @@ function App() {
   }, [galleryItems, isGalleryLoaded])
 
   // Custom Dictionary States (shared across devices via a small backend)
-  const [phrases, setPhrases] = useState(defaultPhrases)
+  const [phrases, setPhrases] = useState(() => {
+    const saved = localStorage.getItem('bestie_phrases')
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved)
+        if (Array.isArray(parsed)) return parsed
+      } catch (e) {
+        console.error('Failed to parse phrases on mount:', e)
+      }
+    }
+    return defaultPhrases
+  })
   const [isPhrasesLoaded, setIsPhrasesLoaded] = useState(false)
 
   useEffect(() => {
@@ -175,11 +223,14 @@ function App() {
 
     const syncPhrases = async () => {
       try {
-        await fetch(phrasesApiUrl, {
+        const response = await fetch(phrasesApiUrl, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ phrases })
         })
+        if (!response.ok) {
+          throw new Error(`Server returned status ${response.status}`)
+        }
         localStorage.setItem('bestie_phrases', JSON.stringify(phrases))
       } catch (error) {
         console.error('Failed to sync phrases to shared storage', error)
@@ -279,6 +330,29 @@ function App() {
     setTimeout(() => {
       setIsFlashing(false)
     }, 600)
+  }
+
+  // Video Player Handlers
+  const toggleVideoPlay = () => {
+    if (!videoRef.current) return
+    if (isVideoPlaying) {
+      videoRef.current.pause()
+    } else {
+      videoRef.current.play().catch(err => console.log("Video playback failed:", err))
+    }
+    setIsVideoPlaying(!isVideoPlaying)
+  }
+
+  const handleSwitchTape = () => {
+    const nextIndex = (currentTapeIndex + 1) % defaultTapes.length
+    setCurrentTapeIndex(nextIndex)
+    setIsVideoPlaying(false)
+    // Defer load until React has updated the source attribute
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.load()
+      }
+    }, 0)
   }
 
   // Draw handlers
@@ -652,7 +726,7 @@ function App() {
         </div>
 
         {/* COLUMN 2: Scattered Polaroids (lg:col-span-5) */}
-        <div className="w-full lg:col-span-5 relative flex flex-col items-center justify-center min-h-[auto] lg:min-h-[460px] lg:h-[540px] mt-2 lg:mt-0">
+        <div className="w-full lg:col-span-5 relative flex flex-col items-center justify-start min-h-[auto] lg:min-h-[820px] lg:h-[880px] mt-2 lg:mt-0 pb-8 lg:pb-0">
           <p className="mb-4 lg:mb-0 lg:absolute lg:top-2 text-center text-[9px] font-bold text-neutral-400 bg-white/40 border border-black/10 px-2.5 py-1 uppercase tracking-wider select-none font-mono">
             ✦ CLICK POLAROIDS TO READ MEMORY LETTERS ✦
           </p>
@@ -664,7 +738,7 @@ function App() {
               onClick={() => setSelectedPhoto(photo)}
               className={`relative w-full max-w-[220px] lg:absolute cursor-pointer transition-all duration-300 hover:z-30 hover:scale-105 active:scale-95 ${photo.rotation}`}
               style={{
-                top: `${index * 13 + 14}%`,
+                top: `${index * 11 + 10}%`,
                 left: index === 0 ? '5%' : index === 1 ? 'auto' : '15%',
                 right: index === 1 ? '5%' : 'auto',
                 maxWidth: '200px',
@@ -692,6 +766,85 @@ function App() {
               </div>
             </div>
             ))}
+          </div>
+
+          {/* Stark Brutalist Video Player Section */}
+          <div className="w-full max-w-[260px] lg:absolute lg:bottom-4 lg:left-1/2 lg:-translate-x-1/2 mt-8 lg:mt-0 z-20">
+            <div className="glass-panel-brutalist p-3.5 relative bg-white flex flex-col items-center">
+              
+              {/* Flower SVGs in the frame corners */}
+              <img src="/pictures/pink_blossom.svg" className="absolute -top-4 -left-4 w-9 h-9 pointer-events-none select-none z-30" alt="flower TL" />
+              <img src="/pictures/orange_rose.svg" className="absolute -top-4 -right-4 w-9 h-9 pointer-events-none select-none z-30" alt="flower TR" />
+              <img src="/pictures/sunflower.svg" className="absolute -bottom-4 -left-4 w-9 h-9 pointer-events-none select-none z-30" alt="flower BL" />
+              <img src="/pictures/white_anemone.svg" className="absolute -bottom-4 -right-4 w-9 h-9 pointer-events-none select-none z-30" alt="flower BR" />
+
+              {/* Video Title */}
+              <div className="w-full text-center mb-2 pb-1 border-b border-black/20">
+                <span className="text-[8px] font-bold text-neutral-500 uppercase tracking-widest font-mono">📼 TAPE: {defaultTapes[currentTapeIndex].name}</span>
+              </div>
+
+              {/* Video Frame */}
+              <div className="w-full aspect-[4/3] bg-black border-2 border-black relative overflow-hidden group shadow-inner">
+                <video
+                  ref={videoRef}
+                  src={videoSrc}
+                  className="w-full h-full object-cover"
+                  loop
+                  muted={isVideoMuted}
+                  playsInline
+                />
+                
+                {/* Custom Play/Pause and Audio Overlays on Hover / Touch */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-4 z-10">
+                  <button
+                    onClick={toggleVideoPlay}
+                    className="w-10 h-10 rounded-full bg-[#FFFDE8] border-2 border-black flex items-center justify-center hover:bg-pastel-purple hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-brutalist-sm"
+                  >
+                    {isVideoPlaying ? (
+                      <svg className="w-4 h-4 fill-current text-black" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                      </svg>
+                    ) : (
+                      <svg className="w-4 h-4 fill-current text-black ml-0.5" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    )}
+                  </button>
+
+                  <button
+                    onClick={() => setIsVideoMuted(!isVideoMuted)}
+                    className="w-10 h-10 rounded-full bg-[#FFFDE8] border-2 border-black flex items-center justify-center hover:bg-pastel-purple hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-brutalist-sm"
+                  >
+                    {isVideoMuted ? (
+                      <svg className="w-4 h-4 fill-current text-black" viewBox="0 0 24 24">
+                        <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM12 4L9.91 6.09 12 8.18V4zm-6.19.11L4.7 5.23 7.47 8H4v8h4l4 4v-6.82l4.28 4.28c-.56.43-1.19.78-1.88.99v2.02c1.23-.27 2.34-.84 3.28-1.59l2.43 2.43 1.12-1.12L5.81 4.11zM12 12.18V18l-3-3H7V9h.18l4.82 4.82z"/>
+                      </svg>
+                    ) : (
+                      <svg className="w-4 h-4 fill-current text-black" viewBox="0 0 24 24">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                      </svg>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              {/* Controls bar below video */}
+              <div className="w-full flex items-center justify-between mt-2.5 gap-2">
+                <button
+                  onClick={toggleVideoPlay}
+                  className="flex-1 py-1.5 bg-[#FFFDE8] hover:bg-pastel-purple text-black border-2 border-black text-[9px] font-black tracking-wider uppercase shadow-brutalist-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer"
+                >
+                  {isVideoPlaying ? 'PAUSE ⏸️' : 'PLAY ▶️'}
+                </button>
+                
+                <button
+                  onClick={handleSwitchTape}
+                  className="flex-1 py-1.5 bg-white hover:bg-neutral-100 text-black border-2 border-black text-[9px] font-black tracking-wider uppercase shadow-brutalist-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer"
+                >
+                  SWITCH TAPE 📼
+                </button>
+              </div>
+            </div>
           </div>
 
         </div>
