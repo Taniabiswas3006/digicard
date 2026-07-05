@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" fill="none">
+  <!-- Main stem - slightly curved -->
+  <path d="M100 270 C98 240, 96 210, 97 180 C98 150, 102 120, 101 90 C100 60, 98 40, 99 15"
+        stroke="#5D8A4E" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Leaf pair 1 (bottom, largest) -->
+  <path d="M97 255 C85 248, 62 250, 55 245 C48 240, 60 235, 75 238 C82 240, 95 248, 97 252"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M97 252 C75 244, 68 246, 65 243" stroke="#4CAF50" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M101 255 C113 248, 136 252, 143 247 C150 242, 138 237, 123 240 C116 242, 103 248, 101 252"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M101 252 C123 246, 130 248, 133 245" stroke="#6DB356" stroke-width="0.8" fill="none" opacity="0.6"/>
+
+  <!-- Leaf pair 2 -->
+  <path d="M97 232 C83 224, 58 227, 52 222 C46 217, 58 213, 73 216 C81 218, 95 226, 97 230"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M97 229 C78 222, 66 224, 62 221" stroke="#5D8A4E" stroke-width="0.8" fill="none" opacity="0.5"/>
+  <path d="M100 232 C114 225, 140 228, 147 223 C154 218, 141 214, 126 217 C118 219, 103 226, 100 230"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M100 229 C120 223, 132 225, 137 222" stroke="#4CAF50" stroke-width="0.8" fill="none" opacity="0.5"/>
+
+  <!-- Leaf pair 3 -->
+  <path d="M97 208 C84 200, 63 203, 57 198 C51 193, 62 190, 76 193 C83 195, 95 203, 97 206"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M100 208 C113 201, 135 204, 141 199 C147 194, 136 191, 122 194 C115 196, 103 203, 100 206"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Leaf pair 4 -->
+  <path d="M98 185 C86 178, 68 181, 63 176 C58 171, 68 168, 80 171 C86 173, 96 180, 98 183"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M100 185 C112 178, 130 181, 135 176 C140 171, 130 168, 118 171 C112 173, 102 180, 100 183"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Leaf pair 5 -->
+  <path d="M98 162 C87 155, 72 158, 68 153 C64 148, 73 146, 83 149 C88 151, 96 157, 98 160"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M101 162 C112 156, 127 159, 131 154 C135 149, 126 147, 116 150 C111 152, 103 157, 101 160"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Leaf pair 6 -->
+  <path d="M99 140 C89 134, 77 136, 73 132 C69 128, 77 126, 86 128 C90 130, 97 135, 99 138"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M101 140 C111 134, 123 136, 127 132 C131 128, 123 126, 114 128 C110 130, 103 135, 101 138"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Leaf pair 7 -->
+  <path d="M100 118 C91 112, 81 114, 78 110 C75 106, 82 105, 90 107 C93 109, 98 114, 100 116"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M101 118 C110 113, 120 115, 123 111 C126 107, 119 106, 111 108 C108 110, 103 114, 101 116"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Leaf pair 8 -->
+  <path d="M100 96 C93 91, 84 93, 82 89 C80 85, 86 84, 93 86 C95 88, 99 92, 100 94"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M101 96 C108 91, 117 93, 119 89 C121 85, 115 84, 108 86 C106 88, 102 92, 101 94"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Leaf pair 9 (smaller) -->
+  <path d="M100 74 C94 70, 87 71, 86 68 C85 65, 90 64, 95 66 C97 67, 99 71, 100 73"
+        fill="#6DB356" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M101 74 C107 70, 114 71, 115 68 C116 65, 111 64, 106 66 C104 67, 102 71, 101 73"
+        fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Leaf pair 10 (smallest, near tip) -->
+  <path d="M99 52 C95 49, 90 50, 89 47 C88 44, 92 44, 96 46 C97 47, 99 50, 99 51"
+        fill="#4CAF50" stroke="#333" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M100 52 C104 49, 109 50, 110 47 C111 44, 107 44, 103 46 C102 47, 100 50, 100 51"
+        fill="#6DB356" stroke="#333" stroke-width="1.2" stroke-linejoin="round"/>
+
+  <!-- Tiny tip leaves -->
+  <path d="M99 35 C96 31, 93 32, 93 29 C93 27, 96 27, 98 29 C99 30, 99 33, 99 34"
+        fill="#6DB356" stroke="#333" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M100 35 C103 31, 106 32, 106 29 C106 27, 103 27, 101 29 C100 30, 100 33, 100 34"
+        fill="#4CAF50" stroke="#333" stroke-width="1" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" fill="none">
+  <!-- Stem - thin and delicate -->
+  <path d="M102 150 C101 168, 99 195, 98 225 C97 245, 98 262, 99 278" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M102 150 C103 170, 100 200, 99 228 C98 248, 100 265, 100 278" stroke="#3D8B37" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+  <!-- Small branch -->
+  <path d="M100 190 C108 182, 118 175, 125 172" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Small leaf 1 - right -->
+  <path d="M100 205 C108 198, 125 190, 138 186 C134 194, 120 204, 105 209 C102 210, 100 208, 100 206" fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M101 207 C115 200, 128 194, 136 188" stroke="#3D8B37" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  <path d="M112 203 L118 197" stroke="#3D8B37" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+  <path d="M122 199 L127 193" stroke="#3D8B37" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+
+  <!-- Small leaf 2 - left -->
+  <path d="M99 230 C90 224, 72 216, 60 214 C64 222, 78 232, 94 236 C97 237, 99 234, 99 232" fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M98 233 C82 226, 70 220, 62 216" stroke="#3D8B37" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  <path d="M85 228 L79 223" stroke="#3D8B37" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+
+  <!-- Small leaf 3 on branch -->
+  <path d="M118 176 C124 170, 135 164, 143 162 C140 169, 130 176, 120 179 C118 180, 117 178, 118 177" fill="#4CAF50" stroke="#333" stroke-width="1.2" stroke-linejoin="round"/>
+
+  <!-- Small bud on branch -->
+  <path d="M125 172 C123 166, 124 158, 128 152 C130 158, 129 166, 127 172" fill="#FFB6C1" stroke="#333" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M125 172 C127 166, 130 158, 130 152" stroke="#FF69B4" stroke-width="0.8" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- Petal 1 - top -->
+  <path d="M100 35 C88 38, 75 52, 73 68 C75 78, 82 88, 92 95 C96 97, 100 96, 100 95 C100 96, 104 97, 108 95 C118 88, 125 78, 127 68 C125 52, 112 38, 100 35Z" fill="#FFB6C1" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M100 42 C95 55, 85 70, 80 80" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path d="M100 42 C105 55, 115 70, 120 80" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <!-- Petal notch -->
+  <path d="M97 36 C99 40, 101 40, 103 36" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.6"/>
+
+  <!-- Petal 2 - top-right -->
+  <path d="M130 58 C138 48, 155 42, 168 48 C172 58, 168 75, 158 88 C150 96, 138 100, 128 98 C118 94, 112 85, 110 78 C112 68, 120 58, 130 58Z" fill="#FFB6C1" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M135 55 C145 55, 158 55, 165 58" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path d="M130 65 C140 68, 152 72, 160 80" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- Petal 3 - bottom-right -->
+  <path d="M140 105 C152 108, 162 120, 162 135 C158 148, 145 155, 132 152 C122 148, 115 138, 112 128 C110 118, 115 108, 122 102 C128 100, 135 102, 140 105Z" fill="#FFB6C1" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M145 110 C155 118, 160 130, 155 142" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path d="M135 108 C142 118, 148 132, 145 145" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- Petal 4 - bottom-left -->
+  <path d="M60 105 C48 108, 38 120, 38 135 C42 148, 55 155, 68 152 C78 148, 85 138, 88 128 C90 118, 85 108, 78 102 C72 100, 65 102, 60 105Z" fill="#FFB6C1" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M55 110 C45 118, 40 130, 45 142" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path d="M65 108 C58 118, 52 132, 55 145" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- Petal 5 - top-left -->
+  <path d="M70 58 C62 48, 45 42, 32 48 C28 58, 32 75, 42 88 C50 96, 62 100, 72 98 C82 94, 88 85, 90 78 C88 68, 80 58, 70 58Z" fill="#FFB6C1" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M65 55 C55 55, 42 55, 35 58" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path d="M70 65 C60 68, 48 72, 40 80" stroke="#FF69B4" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- Center - round pink -->
+  <circle cx="100" cy="100" r="16" fill="#E91E8C" stroke="#333" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="10" fill="#FF69B4" stroke="none" opacity="0.6"/>
+  <!-- Center details - small dots/stamens -->
+  <circle cx="95" cy="95" r="1.8" fill="#FFD700" stroke="#333" stroke-width="0.5"/>
+  <circle cx="105" cy="95" r="1.8" fill="#FFD700" stroke="#333" stroke-width="0.5"/>
+  <circle cx="100" cy="92" r="1.8" fill="#FFD700" stroke="#333" stroke-width="0.5"/>
+  <circle cx="93" cy="102" r="1.5" fill="#FFD700" stroke="#333" stroke-width="0.5"/>
+  <circle cx="107" cy="102" r="1.5" fill="#FFD700" stroke="#333" stroke-width="0.5"/>
+  <circle cx="100" cy="105" r="1.5" fill="#FFD700" stroke="#333" stroke-width="0.5"/>
+  <circle cx="97" cy="98" r="1.2" fill="#FFD700" stroke="#333" stroke-width="0.4"/>
+  <circle cx="103" cy="98" r="1.2" fill="#FFD700" stroke="#333" stroke-width="0.4"/>
+
+  <!-- Soft glow highlight -->
+  <circle cx="96" cy="96" r="4" fill="white" opacity="0.15"/>
+</svg>

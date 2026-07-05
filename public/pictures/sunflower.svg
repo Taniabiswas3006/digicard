@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" fill="none">
+  <!-- Stem -->
+  <path d="M100 145 C99 165, 97 200, 96 235 C95 250, 97 265, 98 275" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M100 145 C101 168, 103 195, 102 230 C101 248, 99 262, 100 275" stroke="#3D8B37" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+  <!-- Leaf 1 - right -->
+  <path d="M99 195 C108 188, 128 178, 145 175 C138 185, 120 195, 99 198" fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M99 196 C115 190, 130 183, 142 177" stroke="#3D8B37" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <!-- Leaf vein -->
+  <path d="M110 191 L115 186" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <path d="M120 188 L124 182" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <path d="M130 184 L133 179" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+
+  <!-- Leaf 2 - left -->
+  <path d="M98 215 C88 205, 62 192, 48 190 C55 202, 75 215, 97 218" fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M97 216 C80 208, 64 200, 50 192" stroke="#3D8B37" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <path d="M85 211 L80 205" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <path d="M73 206 L68 200" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+
+  <!-- Leaf 3 - small right -->
+  <path d="M100 240 C107 235, 122 230, 132 228 C127 236, 115 242, 100 243" fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M100 241 C112 237, 122 233, 130 229" stroke="#3D8B37" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Back petals (behind center) -->
+  <ellipse cx="72" cy="75" rx="8" ry="26" transform="rotate(-55 72 75)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <ellipse cx="128" cy="75" rx="8" ry="26" transform="rotate(55 128 75)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <ellipse cx="100" cy="55" rx="7.5" ry="28" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <ellipse cx="60" cy="100" rx="7" ry="25" transform="rotate(-85 60 100)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <ellipse cx="140" cy="100" rx="7" ry="25" transform="rotate(85 140 100)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Main petals radiating outward -->
+  <!-- Top -->
+  <ellipse cx="100" cy="60" rx="8" ry="30" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Top-right -->
+  <ellipse cx="120" cy="65" rx="7.5" ry="28" transform="rotate(30 120 65)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Right -->
+  <ellipse cx="133" cy="82" rx="7" ry="27" transform="rotate(60 133 82)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Bottom-right -->
+  <ellipse cx="132" cy="105" rx="7.5" ry="26" transform="rotate(95 132 105)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Bottom -->
+  <ellipse cx="115" cy="125" rx="8" ry="27" transform="rotate(130 115 125)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Bottom center -->
+  <ellipse cx="100" cy="132" rx="7" ry="26" transform="rotate(175 100 132)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Bottom-left -->
+  <ellipse cx="85" cy="125" rx="7.5" ry="27" transform="rotate(-130 85 125)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Left -->
+  <ellipse cx="68" cy="105" rx="7" ry="26" transform="rotate(-95 68 105)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Top-left -->
+  <ellipse cx="67" cy="82" rx="7.5" ry="27" transform="rotate(-60 67 82)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+  <!-- Top-left upper -->
+  <ellipse cx="80" cy="65" rx="7" ry="28" transform="rotate(-30 80 65)" fill="#F5D547" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Secondary petals (slightly offset for fullness) -->
+  <ellipse cx="110" cy="58" rx="6.5" ry="24" transform="rotate(15 110 58)" fill="#E8C83A" stroke="#333" stroke-width="1.2" opacity="0.85"/>
+  <ellipse cx="130" cy="92" rx="6" ry="23" transform="rotate(78 130 92)" fill="#E8C83A" stroke="#333" stroke-width="1.2" opacity="0.85"/>
+  <ellipse cx="90" cy="58" rx="6.5" ry="24" transform="rotate(-15 90 58)" fill="#E8C83A" stroke="#333" stroke-width="1.2" opacity="0.85"/>
+  <ellipse cx="70" cy="92" rx="6" ry="23" transform="rotate(-78 70 92)" fill="#E8C83A" stroke="#333" stroke-width="1.2" opacity="0.85"/>
+  <ellipse cx="108" cy="128" rx="6" ry="22" transform="rotate(150 108 128)" fill="#E8C83A" stroke="#333" stroke-width="1.2" opacity="0.85"/>
+  <ellipse cx="92" cy="128" rx="6" ry="22" transform="rotate(-150 92 128)" fill="#E8C83A" stroke="#333" stroke-width="1.2" opacity="0.85"/>
+
+  <!-- Center circle - brown textured -->
+  <circle cx="100" cy="95" r="22" fill="#8B6914" stroke="#333" stroke-width="1.5"/>
+  <!-- Center texture dots for seeds -->
+  <circle cx="93" cy="88" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="100" cy="86" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="107" cy="88" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="90" cy="95" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="97" cy="93" r="2.2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="104" cy="93" r="2.2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="110" cy="95" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="93" cy="100" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="100" cy="99" r="2.2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="107" cy="100" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="96" cy="106" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="103" cy="106" r="2" fill="#6B4E0A" opacity="0.7"/>
+  <circle cx="87" cy="90" r="1.5" fill="#A07D1A" opacity="0.5"/>
+  <circle cx="113" cy="90" r="1.5" fill="#A07D1A" opacity="0.5"/>
+  <circle cx="86" cy="100" r="1.5" fill="#A07D1A" opacity="0.5"/>
+  <circle cx="114" cy="100" r="1.5" fill="#A07D1A" opacity="0.5"/>
+  <circle cx="100" cy="110" r="1.5" fill="#A07D1A" opacity="0.5"/>
+  <!-- Inner ring highlight -->
+  <circle cx="100" cy="95" r="15" fill="none" stroke="#A07D1A" stroke-width="0.8" opacity="0.5"/>
+  <circle cx="100" cy="95" r="10" fill="none" stroke="#A07D1A" stroke-width="0.6" opacity="0.4"/>
+</svg>

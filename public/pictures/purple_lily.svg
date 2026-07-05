@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" fill="none">
+  <!-- Stem -->
+  <path d="M100 160 C99 180, 97 210, 96 240 C95 255, 97 268, 98 278" stroke="#4CAF50" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <path d="M100 160 C101 182, 99 215, 98 242 C97 256, 99 270, 100 278" stroke="#3D8B37" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+  <!-- Elongated leaf 1 - right -->
+  <path d="M98 200 C110 190, 138 172, 160 160 C155 175, 132 195, 108 208 C103 210, 99 206, 98 203" fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M99 203 C120 192, 142 178, 158 163" stroke="#3D8B37" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <path d="M115 196 L125 186" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <path d="M130 188 L138 179" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <path d="M145 178 L150 170" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+
+  <!-- Elongated leaf 2 - left -->
+  <path d="M97 235 C82 222, 52 205, 32 198 C38 212, 62 230, 88 242 C93 244, 96 240, 97 238" fill="#4CAF50" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M96 239 C72 228, 52 215, 35 202" stroke="#3D8B37" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <path d="M78 232 L68 224" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <path d="M60 222 L52 215" stroke="#3D8B37" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+
+  <!-- Small leaf bud at stem top -->
+  <path d="M100 162 C95 158, 85 150, 80 142 C88 145, 96 155, 100 162" fill="#3D8B37" stroke="#333" stroke-width="1.2"/>
+  <path d="M100 162 C105 158, 115 150, 120 142 C112 145, 104 155, 100 162" fill="#3D8B37" stroke="#333" stroke-width="1.2"/>
+
+  <!-- Back petals (3) -->
+  <!-- Back top -->
+  <path d="M100 22 C92 28, 80 50, 78 72 C82 80, 92 90, 100 95 C108 90, 118 80, 122 72 C120 50, 108 28, 100 22Z" fill="#9B7FD4" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M100 30 C96 45, 88 65, 85 78" stroke="#7B5FB4" stroke-width="1" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M100 30 C104 45, 112 65, 115 78" stroke="#7B5FB4" stroke-width="1" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <!-- Spots/freckles -->
+  <circle cx="92" cy="60" r="1.5" fill="#7B5FB4" opacity="0.5"/>
+  <circle cx="108" cy="60" r="1.5" fill="#7B5FB4" opacity="0.5"/>
+  <circle cx="95" cy="72" r="1.2" fill="#7B5FB4" opacity="0.4"/>
+  <circle cx="105" cy="72" r="1.2" fill="#7B5FB4" opacity="0.4"/>
+
+  <!-- Back left -->
+  <path d="M40 130 C42 118, 55 98, 70 85 C78 88, 90 98, 95 108 C88 118, 72 130, 60 135 C50 138, 42 136, 40 130Z" fill="#9B7FD4" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M48 130 C55 120, 65 105, 72 92" stroke="#7B5FB4" stroke-width="1" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <circle cx="58" cy="118" r="1.3" fill="#7B5FB4" opacity="0.4"/>
+  <circle cx="65" cy="108" r="1.3" fill="#7B5FB4" opacity="0.4"/>
+
+  <!-- Back right -->
+  <path d="M160 130 C158 118, 145 98, 130 85 C122 88, 110 98, 105 108 C112 118, 128 130, 140 135 C150 138, 158 136, 160 130Z" fill="#9B7FD4" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M152 130 C145 120, 135 105, 128 92" stroke="#7B5FB4" stroke-width="1" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <circle cx="142" cy="118" r="1.3" fill="#7B5FB4" opacity="0.4"/>
+  <circle cx="135" cy="108" r="1.3" fill="#7B5FB4" opacity="0.4"/>
+
+  <!-- Front petals (3) -->
+  <!-- Front left -->
+  <path d="M48 90 C50 80, 62 60, 78 50 C84 56, 90 70, 92 82 C88 92, 72 102, 62 106 C54 108, 48 102, 48 90Z" fill="#A88FDB" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M55 95 C60 82, 70 68, 78 56" stroke="#7B5FB4" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <circle cx="68" cy="78" r="1.5" fill="#7B5FB4" opacity="0.4"/>
+  <circle cx="72" cy="90" r="1.2" fill="#7B5FB4" opacity="0.35"/>
+
+  <!-- Front right -->
+  <path d="M152 90 C150 80, 138 60, 122 50 C116 56, 110 70, 108 82 C112 92, 128 102, 138 106 C146 108, 152 102, 152 90Z" fill="#A88FDB" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M145 95 C140 82, 130 68, 122 56" stroke="#7B5FB4" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <circle cx="132" cy="78" r="1.5" fill="#7B5FB4" opacity="0.4"/>
+  <circle cx="128" cy="90" r="1.2" fill="#7B5FB4" opacity="0.35"/>
+
+  <!-- Front bottom -->
+  <path d="M75 148 C78 138, 85 120, 95 110 C100 112, 105 110, 110 108 C115 120, 122 138, 125 148 C124 155, 115 160, 100 162 C85 160, 76 155, 75 148Z" fill="#A88FDB" stroke="#333" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M85 148 C90 135, 96 122, 100 112" stroke="#7B5FB4" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M115 148 C110 135, 104 122, 100 112" stroke="#7B5FB4" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <circle cx="92" cy="135" r="1.3" fill="#7B5FB4" opacity="0.4"/>
+  <circle cx="108" cy="135" r="1.3" fill="#7B5FB4" opacity="0.4"/>
+  <circle cx="100" cy="145" r="1.3" fill="#7B5FB4" opacity="0.35"/>
+
+  <!-- Stamens -->
+  <path d="M100 108 C96 95, 88 78, 82 65" stroke="#5D8A3C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="81" cy="63" rx="3" ry="4" fill="#FFD700" stroke="#333" stroke-width="1" transform="rotate(-15 81 63)"/>
+
+  <path d="M100 108 C104 95, 112 78, 118 65" stroke="#5D8A3C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="119" cy="63" rx="3" ry="4" fill="#FFD700" stroke="#333" stroke-width="1" transform="rotate(15 119 63)"/>
+
+  <path d="M100 108 C98 94, 94 76, 92 62" stroke="#5D8A3C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="92" cy="60" rx="2.5" ry="3.5" fill="#FFD700" stroke="#333" stroke-width="1"/>
+
+  <path d="M100 108 C102 94, 106 76, 108 62" stroke="#5D8A3C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="108" cy="60" rx="2.5" ry="3.5" fill="#FFD700" stroke="#333" stroke-width="1"/>
+
+  <path d="M100 108 C100 94, 100 76, 100 58" stroke="#5D8A3C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="100" cy="56" rx="2.5" ry="3.5" fill="#FFD700" stroke="#333" stroke-width="1"/>
+
+  <!-- Pistil center -->
+  <circle cx="100" cy="108" r="4" fill="#5D8A3C" stroke="#333" stroke-width="1"/>
+</svg>

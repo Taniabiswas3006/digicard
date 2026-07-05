@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&family=Great+Vibes&family=Carattere&family=Martian+Mono:wght@300;400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  color: #000000;
+  background-color: #fafcfb;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, a, input, select, textarea, canvas {
+  touch-action: manipulation;
+}
+
+input, textarea, select {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Plaid/Gingham washi tape effects */
+.washi-tape-pink {
+  background-color: #ffd6e0;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.45) 50%, transparent 50%),
+    linear-gradient(rgba(255,255,255,0.45) 50%, transparent 50%);
+  background-size: 14px 14px;
+  border: 2px solid #000000;
+}
+
+.washi-tape-mint {
+  background-color: #e2f5ee;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.45) 50%, transparent 50%),
+    linear-gradient(rgba(255,255,255,0.45) 50%, transparent 50%);
+  background-size: 14px 14px;
+  border: 2px solid #000000;
+}
+
+.washi-tape-lavender {
+  background-color: #eee9ff;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.45) 50%, transparent 50%),
+    linear-gradient(rgba(255,255,255,0.45) 50%, transparent 50%);
+  background-size: 14px 14px;
+  border: 2px solid #000000;
+}
+
+/* Brutalist Grid Overlay */
+.grid-overlay {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* Glassmorphism containers with stark black borders */
+.glass-panel-brutalist {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.glass-panel-heavy-brutalist {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid #000000;
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+/* Iridescent Text Gradient */
+.text-iridescent-brutalist {
+  background: linear-gradient(
+    135deg,
+    #ff7096 0%,
+    #cc8df2 30%,
+    #5ec7eb 65%,
+    #70e3c7 85%,
+    #ff7096 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: iridescent-flow 10s linear infinite;
+}
+
+@keyframes iridescent-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hide default scrollbar but keep functional */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fafcfb;
+  border-left: 2px solid #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #fafcfb;
+}
+
+/* Shutter flash animation */
+.flash-active {
+  animation: flash-shutter 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes flash-shutter {
+  0% { opacity: 1; background-color: rgba(255, 255, 255, 1); }
+  40% { opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); }
+  100% { opacity: 0; background-color: transparent; }
+}
+
+/* Bulletproof Marquee Animation */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
