@@ -114,19 +114,6 @@ input, textarea, select {
   100% { background-position: 0% 50%; }
 }
 
-/* Hide default scrollbar but keep functional */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #fafcfb;
-  border-left: 2px solid #000000;
-}
-::-webkit-scrollbar-thumb {
-  background: #000000;
-  border: 2px solid #fafcfb;
-}
-
 /* Shutter flash animation */
 .flash-active {
   animation: flash-shutter 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
