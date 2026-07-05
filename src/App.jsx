@@ -528,12 +528,12 @@ function App() {
           <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-black" />
 
           {/* Hand-drawn Flower Accents on Title Box */}
-          <img src="/pictures/purple_lily.svg" className="absolute -top-12 -right-10 w-24 h-auto pointer-events-none select-none drop-shadow-sm hidden sm:block" alt="lily" />
-          <img src="/pictures/red_rose.svg" className="absolute -bottom-12 -left-10 w-24 h-auto pointer-events-none select-none drop-shadow-sm hidden sm:block" alt="rose" />
+          <img src="/pictures/purple_lily.svg" className="absolute -top-8 -right-5 w-14 sm:w-24 h-auto pointer-events-none select-none drop-shadow-sm" alt="lily" />
+          <img src="/pictures/red_rose.svg" className="absolute -bottom-10 -left-5 w-14 sm:w-24 h-auto pointer-events-none select-none drop-shadow-sm" alt="rose" />
 
           {/* Sunflowers flanking the text */}
-          <img src="/pictures/sunflower.svg" className="absolute left-6 top-1/2 -translate-y-1/2 w-20 h-auto pointer-events-none select-none hidden lg:block" alt="sunflower left" />
-          <img src="/pictures/sunflower_2.svg" className="absolute right-6 top-1/2 -translate-y-1/2 w-20 h-auto pointer-events-none select-none hidden lg:block" alt="sunflower right" />
+          <img src="/pictures/sunflower.svg" className="absolute left-2 top-1/2 -translate-y-1/2 w-12 sm:w-20 h-auto pointer-events-none select-none" alt="sunflower left" />
+          <img src="/pictures/sunflower_2.svg" className="absolute right-2 top-1/2 -translate-y-1/2 w-12 sm:w-20 h-auto pointer-events-none select-none" alt="sunflower right" />
 
           {/* Sparkles */}
           <span className="absolute top-2 left-2 text-lg text-purple-400">✦</span>
@@ -587,7 +587,7 @@ function App() {
         <div className="w-full lg:col-span-4 flex flex-col items-center gap-4 relative">
           
           {/* Fern branch sticker flanking left */}
-          <img src="/pictures/fern_vertical.svg" className="absolute -left-12 top-10 w-16 h-auto pointer-events-none select-none opacity-40 hidden xl:block" alt="fern left" />
+          <img src="/pictures/fern_vertical.svg" className="absolute -left-8 top-10 w-12 md:w-16 h-auto pointer-events-none select-none opacity-40" alt="fern left" />
 
           <div className="bg-white border-4 border-black p-4 shadow-brutalist max-w-[280px] w-full flex flex-col items-center relative">
             
@@ -700,7 +700,7 @@ function App() {
         <div className="w-full lg:col-span-3 flex flex-col gap-6 items-center justify-center relative">
           
           {/* Fern branch sticker flanking right */}
-          <img src="/pictures/fern_vertical_2.svg" className="absolute -right-12 bottom-10 w-16 h-auto pointer-events-none select-none opacity-40 hidden xl:block" alt="fern right" />
+          <img src="/pictures/fern_vertical_2.svg" className="absolute -right-8 bottom-10 w-12 md:w-16 h-auto pointer-events-none select-none opacity-40" alt="fern right" />
 
           {/* --- Stark Brutalist Convo Widget --- */}
           <div className="glass-panel-heavy-brutalist w-full max-w-[280px] flex flex-col select-none relative">
@@ -847,8 +847,8 @@ function App() {
         <div className="border-4 border-black bg-white shadow-brutalist p-5 md:p-8 relative">
           
           {/* Hand-drawn Red Rose Accents on Doodle Section Corners */}
-          <img src="/pictures/red_rose.svg" className="absolute -top-12 -left-10 w-20 h-auto pointer-events-none select-none drop-shadow-sm z-20 hidden sm:block" alt="red rose corner left" />
-          <img src="/pictures/red_rose.svg" className="absolute -bottom-12 -right-10 w-20 h-auto pointer-events-none select-none scale-x-[-1] drop-shadow-sm z-20 hidden sm:block" alt="red rose corner right" />
+          <img src="/pictures/red_rose.svg" className="absolute -top-10 -left-6 w-14 sm:w-20 h-auto pointer-events-none select-none drop-shadow-sm z-20" alt="red rose corner left" />
+          <img src="/pictures/red_rose.svg" className="absolute -bottom-10 -right-6 w-14 sm:w-20 h-auto pointer-events-none select-none scale-x-[-1] drop-shadow-sm z-20" alt="red rose corner right" />
 
           {/* Corner accents */}
           <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-black" />
@@ -1172,7 +1172,7 @@ function App() {
         <div className="border-4 border-black bg-white shadow-brutalist p-3 sm:p-5 md:p-8 relative">
 
           {/* Sunflower decal in Dictionary */}
-          <img src="/pictures/sunflower.svg" className="absolute -top-10 -right-6 w-16 h-auto pointer-events-none select-none hidden sm:block" alt="sunflower" />
+          <img src="/pictures/sunflower.svg" className="absolute -top-8 -right-4 w-12 sm:w-16 h-auto pointer-events-none select-none" alt="sunflower" />
 
           {/* Corner accents */}
           <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-black" />
@@ -1314,7 +1314,7 @@ function App() {
         <div className="border-4 border-black bg-pastel-purple/20 shadow-brutalist p-3 sm:p-5 md:p-6 text-center relative">
           
           {/* Anemone flower sticker */}
-          <img src="/pictures/white_anemone.svg" className="absolute -bottom-10 -right-6 w-16 h-auto pointer-events-none select-none hidden sm:block" alt="anemone" />
+          <img src="/pictures/white_anemone.svg" className="absolute -bottom-8 -right-4 w-12 sm:w-16 h-auto pointer-events-none select-none" alt="anemone" />
           
           <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-black" />
           <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-black" />
@@ -1388,7 +1388,7 @@ function App() {
         
         {/* Floating pill link */}
         <div className="relative inline-flex items-center gap-4 justify-center">
-          <img src="/pictures/pink_blossom.svg" className="w-10 h-auto pointer-events-none select-none hidden sm:block" alt="left blossom" />
+          <img src="/pictures/pink_blossom.svg" className="w-8 sm:w-10 h-auto pointer-events-none select-none" alt="left blossom" />
           
           <a 
             href="https://digibouquet.vercel.app/bouquet/7e761783-5736-47d4-803c-eed06bf248de"
@@ -1399,7 +1399,7 @@ function App() {
             <span>OPEN OUR DIGIBOUQUET 🌸</span>
           </a>
 
-          <img src="/pictures/pink_blossom.svg" className="w-10 h-auto pointer-events-none select-none scale-x-[-1] hidden sm:block" alt="right blossom" />
+          <img src="/pictures/pink_blossom.svg" className="w-8 sm:w-10 h-auto pointer-events-none select-none scale-x-[-1]" alt="right blossom" />
         </div>
 
         {/* Watermark */}
