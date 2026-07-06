@@ -12,13 +12,8 @@ const defaultPhrases = [
 const defaultTapes = [
   {
     id: 'tape1',
-    name: 'MEMORIES TAPE 1 📽️',
-    url: '/video1.mp4'
-  },
-  {
-    id: 'tape2',
-    name: 'MEMORIES TAPE 2 📼',
-    url: '/video2.mp4'
+    name: 'MEMORIES TAPE 📽️',
+    url: '/video.mp4'
   }
 ]
 
@@ -780,7 +775,7 @@ function App() {
 
               {/* Video Title */}
               <div className="w-full text-center mb-2 pb-1 border-b border-black/20">
-                <span className="text-[8px] font-bold text-neutral-500 uppercase tracking-widest font-mono">📼 TAPE: {defaultTapes[currentTapeIndex].name}</span>
+                <span className="text-[8px] font-bold text-neutral-500 uppercase tracking-widest font-mono">📼 MEMORIES TAPE</span>
               </div>
 
               {/* Video Frame */}
@@ -829,19 +824,12 @@ function App() {
               </div>
 
               {/* Controls bar below video */}
-              <div className="w-full flex items-center justify-between mt-2.5 gap-2">
+              <div className="w-full mt-2.5">
                 <button
                   onClick={toggleVideoPlay}
-                  className="flex-1 py-1.5 bg-[#FFFDE8] hover:bg-pastel-purple text-black border-2 border-black text-[9px] font-black tracking-wider uppercase shadow-brutalist-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer"
+                  className="w-full py-1.5 bg-[#FFFDE8] hover:bg-pastel-purple text-black border-2 border-black text-[9px] font-black tracking-wider uppercase shadow-brutalist-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer"
                 >
                   {isVideoPlaying ? 'PAUSE ⏸️' : 'PLAY ▶️'}
-                </button>
-                
-                <button
-                  onClick={handleSwitchTape}
-                  className="flex-1 py-1.5 bg-white hover:bg-neutral-100 text-black border-2 border-black text-[9px] font-black tracking-wider uppercase shadow-brutalist-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer"
-                >
-                  SWITCH TAPE 📼
                 </button>
               </div>
             </div>
