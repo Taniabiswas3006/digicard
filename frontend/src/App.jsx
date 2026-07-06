@@ -1557,7 +1557,7 @@ function App() {
 
         {/* Watermark */}
         <p className="text-[9px] text-neutral-500 font-bold mt-2 sm:mt-5 tracking-widest uppercase font-mono">
-          MADE FOR K & N BY TANIA
+          MADE WITH LOVE FROM KOLKATA
         </p>
       </footer>
     </div>
